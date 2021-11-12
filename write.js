@@ -7,7 +7,7 @@ let writeStream;
 if (output) {
   try {
     fs.accessSync(path.resolve(output), fs.constants.R_OK);
-    readStream = fs.createWriteStream(path.resolve(output));
+    writeStream = fs.createWriteStream(path.resolve(output), { flags: 'a' });
   } catch (err) {
     process.stderr.write(`Error: Failed to access file ${output}!`);
     process.exit(1);
