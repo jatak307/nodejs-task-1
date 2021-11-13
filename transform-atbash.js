@@ -1,6 +1,6 @@
 const { Transform } = require('stream');
 
-const createAtbashStream = () => {
+module.exports = () => {
   return new Transform({
     transform(chunk, enc, cb) {
       const chunkArr = chunk.toString().split('');
@@ -28,5 +28,3 @@ function atbash(letter) {
   }
   return res;
 }
-
-module.exports = createAtbashStream();
