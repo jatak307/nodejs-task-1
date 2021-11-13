@@ -1,7 +1,7 @@
 const { pipeline } = require('stream');
 const readStream = require('./read');
 const writeStream = require('./write');
-const atbashStream = require('./transform');
+const atbashStream = require('./transform-atbash');
 const args = require('./args');
 
 console.log('INDEX', args);
