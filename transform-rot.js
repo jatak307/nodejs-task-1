@@ -23,8 +23,8 @@ function caesar(letter, type) {
   let smallEnd = 122;
   let res;
 
-  if (type === "C1") {
-    const sum = charcode + 1;
+  if (type === "R1") {
+    const sum = charcode + 8;
     if (charcode >= bigStart && charcode <= bigEnd) {
       let newCharcode = sum > bigEnd ? bigStart + (sum - bigEnd - 1) : sum;
       res = String.fromCharCode(newCharcode);
@@ -32,8 +32,8 @@ function caesar(letter, type) {
       let newCharcode = sum > smallEnd ? smallStart + (sum - smallEnd - 1) : sum;
       res = String.fromCharCode(newCharcode);
     }
-  } else if (type === "C0") {
-    const sum = charcode - 1;
+  } else if (type === "R0") {
+    const sum = charcode - 8;
     if (charcode >= bigStart && charcode <= bigEnd) {
       let newCharcode = sum < bigStart ? (bigEnd - (bigStart - sum - 1)) : sum;
       res = String.fromCharCode(newCharcode);

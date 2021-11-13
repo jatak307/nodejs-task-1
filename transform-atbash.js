@@ -11,7 +11,7 @@ const createAtbashStream = () => {
 }
 
 function atbash(letter) {
-  const rangeOfLetters =  /[A-Za-z]/g;
+  const rangeOfLetters = /[A-Za-z]/g;
   if (!rangeOfLetters.test(letter)) {
     return letter;
   }
@@ -23,8 +23,7 @@ function atbash(letter) {
   let res;
   if (charcode >= bigStart && charcode <= bigEnd) {
     res = String.fromCharCode(bigEnd - (charcode - bigStart));
-  }
-  else if (charcode >= smallStart && charcode <= smallEnd) {
+  } else if (charcode >= smallStart && charcode <= smallEnd) {
     res = String.fromCharCode(smallEnd - (charcode - smallStart));
   }
   return res;
