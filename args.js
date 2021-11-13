@@ -1,4 +1,5 @@
-const isValidConfig = require('./validation/cipher-validation');
+const isValidConfig = require('./validation/config-validation');
+const isDuplicated = require('./validation/duplication-check');
 
 if (process.argv.length < 3) {
   process.stderr.write(`Error: Arguments must be provided to run the application.\nFor example: -c "C1" -i "input.txt" -o "output.txt"`);
@@ -23,12 +24,5 @@ const args = process.argv.reduce((acc, current, i, arr) => {
   }
   return acc;
 }, {});
-
-function isDuplicated(obj, key) {
-  if (obj[key]) {
-    process.stderr.write(`Error: The process was aborted because some of the arguments are duplicated.`);
-    process.exit(1);
-  }
-}
 
 module.exports = args;
