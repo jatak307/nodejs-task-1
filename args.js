@@ -1,3 +1,5 @@
+const isValidConfig = require('./validation/cipher-validation');
+
 if (process.argv.length < 3) {
   process.stderr.write(`Error: Arguments must be provided to run the application.\nFor example: -c "C1" -i "input.txt" -o "output.txt"`);
   process.exit(1);
@@ -26,36 +28,6 @@ function isDuplicated(obj, key) {
   if (obj[key]) {
     process.stderr.write(`Error: The process was aborted because some of the arguments are duplicated.`);
     process.exit(1);
-  }
-}
-
-function isValidConfig(config) {
-  let configArr;
-  if (config[config.length - 1] === '-') {
-    const configArr = config.slice(0, -1).split('-');
-    return configArr.every((elem) => isValidElem(elem));
-  }
-  configArr = config.split('-');
-  return configArr.every((elem) => isValidElem(elem));
-}
-
-function isValidElem(el) {
-  return el.length === 1
-    ? isValidAtbash(el)
-    : el.length === 2
-      ? isValidCaesar(el)
-      : false;
-}
-
-function isValidAtbash(el) {
-  return el === 'A' ? true : false;
-}
-
-function isValidCaesar(el) {
-  if (el[0] === 'C' || el[0] === 'R') {
-    return Number(el[1]) <= 1 ? true : false;
-  } else {
-    return false;
   }
 }
 
