@@ -1,3 +1,8 @@
+if (process.argv.length < 3) {
+  process.stderr.write(`Error: Arguments must be provided to run the application.\nFor example: -c "C1" -i "input.txt" -o "output.txt"`);
+  process.exit(1);
+}
+
 const args = process.argv.reduce((acc, current, i, arr) => {
   if (current === '-c' || current === '--config') {
     isDuplicated(acc, 'config');
