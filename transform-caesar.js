@@ -5,8 +5,8 @@ module.exports = (type) => {
   return new Transform({
     transform(chunk, enc, cb) {
       const chunkArr = chunk.toString().split('');
-      const newArr = chunkArr.map((letter) => caesar(letter, type)).join('');
-      cb(null, newArr);
+      const newChunk = chunkArr.map((letter) => caesar(letter, type)).join('');
+      cb(null, newChunk);
     }
   })
 }
