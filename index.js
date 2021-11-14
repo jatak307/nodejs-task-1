@@ -1,6 +1,6 @@
 const { pipeline } = require('stream');
-const readStream = require('./read');
-const writeStream = require('./write');
+const readStream = require('./read-stream');
+const writeStream = require('./write-stream');
 const transformArray = require('./transform-array');
 const { config } = require('./args');
 
