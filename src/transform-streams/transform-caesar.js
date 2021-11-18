@@ -1,5 +1,5 @@
 const { Transform } = require('stream');
-const caesar = require('./ciphers/caesar');
+const caesar = require('../ciphers/caesar');
 
 module.exports = (type) => {
   return new Transform({
