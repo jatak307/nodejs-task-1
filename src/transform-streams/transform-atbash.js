@@ -1,5 +1,5 @@
 const { Transform } = require('stream');
-const atbash = require('./ciphers/atbash');
+const atbash = require('../ciphers/atbash');
 
 module.exports = () => {
   return new Transform({

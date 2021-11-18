@@ -1,5 +1,5 @@
 const { Transform } = require('stream');
-const rot = require('./ciphers/rot-8');
+const rot = require('../ciphers/rot-8');
 
 module.exports = (type) => {
   return new Transform({
