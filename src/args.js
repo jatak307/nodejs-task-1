@@ -1,5 +1,3 @@
-const isValidConfig = require('./validation/config-validation');
-const isDuplicated = require('./validation/duplication-check');
 const setArgument = require('./validation/set-argument');
 const errorHundler = require('./errors/error-hundler');
 
