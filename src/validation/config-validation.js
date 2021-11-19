@@ -1,4 +1,8 @@
+const errorHundler = require('../errors/error-hundler');
+
 function isValidConfig(config) {
+  if(config === undefined) errorHundler('Config not found');
+  
   let configArr;
   if (config[config.length - 1] === '-') {
     const configArr = config.slice(0, -1).split('-');
