@@ -3,7 +3,7 @@ const isDuplicated = require('../../src/validation/duplication-check');
 describe('Error scenarios: 1 point', () => {
   test('Should throw an error if the -c argument is passed more than once', () => {
     const obj = { config: 'C1'};
-    expect(() => isDuplicated(config, 'A')).toThrow();
+    expect(() => isDuplicated(obj, 'config')).toThrow();
   });
   test('Should throw an error if the -i argument is passed more than once', () => {
     const obj = { input: 'input.txt'};
