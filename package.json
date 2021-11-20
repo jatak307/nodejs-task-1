@@ -19,5 +19,10 @@
   "homepage": "https://github.com/jatak307/nodejs-task-1#readme",
   "devDependencies": {
     "jest": "^27.3.1"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ]
   }
 }

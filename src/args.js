@@ -1,5 +1,5 @@
 const setArgument = require('./validation/set-argument');
-const errorHundler = require('./errors/error-hundler');
+const errorHundler = require('./errors/error-handler');
 
 if (process.argv.length < 3) {
   errorHundler(`Error: Arguments must be provided to run the application.\nFor example: -c "C1" -i "input.txt" -o "output.txt"`);
