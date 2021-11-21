@@ -1,4 +1,4 @@
-const ConfigError = require('../errors/errors');
+const { ConfigError } = require('../errors/errors');
 
 function isValidConfig(config) {
   if(config === undefined) throw new ConfigError(`Config not found`);

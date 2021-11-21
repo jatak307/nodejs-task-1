@@ -1,6 +1,4 @@
-const { ValidFileNameError } = require('./errors');
-
-module.exports = function errorHandler (error = new ValidFileNameError(`File no access!`)) {
+module.exports = function errorHandler (error) {
   const { isCustom, message, errorCode } = error;
 
   if (isCustom) {
@@ -11,7 +9,7 @@ module.exports = function errorHandler (error = new ValidFileNameError(`File no 
   }
 };
 
-module.exports = function errorHundler(message) {
-  process.stderr.write(`Error: ${message}.`);
-  process.exit(1);
-}
+// module.exports = function errorHundler(message) {
+//   process.stderr.write(`Error: ${message}.`);
+//   process.exit(1);
+// }
