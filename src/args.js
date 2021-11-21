@@ -1,15 +1,12 @@
 const setArgument = require('./validation/set-argument');
-const errorHandler = require('./errors/error-handler');
 const { ConfigError } = require('./errors/errors');
 
-let args;
-
-function getArguments() {
-  if (process.argv.length < 3) throw new ConfigError(
+function getArguments(array) {
+  if (array.length < 3) throw new ConfigError(
     `Error: Arguments must be provided to run the application.\nFor example: -c "C1" -i "input.txt" -o "output.txt"`
     );
 
-  const args = process.argv.reduce((acc, current, i, arr) => {
+  const args = array.reduce((acc, current, i, arr) => {
     if (current === '-c' || current === '--config') {
       setArgument(acc, 'config', arr[i + 1]);
     } else if (current === '-i' || current === '--input') {
@@ -23,10 +20,4 @@ function getArguments() {
   return args;
 }
 
-try {
-  args = getArguments();
-} catch (error) {
-  errorHandler(error);
-}
-
-module.exports = args;
+module.exports = getArguments;
