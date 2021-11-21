@@ -1,11 +1,11 @@
 const { Transform } = require('stream');
-const caesar = require('./ciphers/caesar');
+const atbash = require('../ciphers/atbash');
 
-module.exports = (type) => {
+module.exports = () => {
   return new Transform({
     transform(chunk, enc, cb) {
       const chunkArr = chunk.toString().split('');
-      const newChunk = chunkArr.map((letter) => caesar(letter, type)).join('');
+      const newChunk = chunkArr.map((letter) => atbash(letter)).join('');
       cb(null, newChunk);
     }
   })

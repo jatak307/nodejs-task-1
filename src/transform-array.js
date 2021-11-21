@@ -1,6 +1,6 @@
-const atbashStream = require('./transform-atbash');
-const caesarStream = require('./transform-caesar');
-const rotStream = require('./transform-rot');
+const atbashStream = require('./transform-streams/transform-atbash');
+const caesarStream = require('./transform-streams/transform-caesar');
+const rotStream = require('./transform-streams/transform-rot');
 
 const transformArray = (config) => {
   configArr = config.split('-');

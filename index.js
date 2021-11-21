@@ -1,12 +1,21 @@
 const { pipeline } = require('stream');
-const readStream = require('./read-stream');
-const writeStream = require('./write-stream');
-const transformArray = require('./transform-array');
-const { config } = require('./args');
+const readStream = require('./src/read-stream');
+const writeStream = require('./src/write-stream');
+const transformArray = require('./src/transform-array');
+const errorHandler = require('./src/errors/error-handler');
+const getArguments = require('./src/args');
 
-pipeline(readStream, ...transformArray(config), writeStream, (err) => {
+let mainObj;
+
+try {
+  mainObj = getArguments(process.argv);
+} catch (error) {
+  errorHandler(error);
+}
+
+pipeline(readStream(mainObj.input), ...transformArray(mainObj.config), writeStream(mainObj.output), (err) => {
   if (err) {
-    console.log(err);
+    errorHandler(error);
   } else {
     console.log('success');
   }

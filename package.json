@@ -4,7 +4,8 @@
   "description": "NodeJs. Task 1. Ciphering CLI tool",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "test:coverage": "jest --coverage"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,13 @@
   "bugs": {
     "url": "https://github.com/jatak307/nodejs-task-1/issues"
   },
-  "homepage": "https://github.com/jatak307/nodejs-task-1#readme"
+  "homepage": "https://github.com/jatak307/nodejs-task-1#readme",
+  "devDependencies": {
+    "jest": "^27.3.1"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ]
+  }
 }
