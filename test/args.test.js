@@ -18,10 +18,32 @@ const { ConfigError } = require('../src/errors/errors');
 
 describe('Success scenarios', () => {
   test('Should return the config object', () => {
-    let customStdin = 'node my_ciphering_cli -c C1-C1-R0-A -i ./input.txt -o ./output.txt';
+    let customStdin = 'node my_ciphering_cli -c C1-C0-A-R1-R0-A-R0-R0-C1-A -i ./input.txt -o ./output.txt';
     const processData = customStdin.split(' ');
     const resultObj = {
-      config: 'C1-C1-R0-A',
+      config: 'C1-C0-A-R1-R0-A-R0-R0-C1-A',
+      input: './input.txt',
+      output: './output.txt'
+    }
+    expect(getArguments(processData)).toEqual(resultObj);
+  });
+
+  test('Should return the config object', () => {
+    let customStdin = 'node my_ciphering_cli -c A-A-A-R1-R0-R0-R0-C1-C1-A -i ./input.txt -o ./output.txt';
+    const processData = customStdin.split(' ');
+    const resultObj = {
+      config: 'A-A-A-R1-R0-R0-R0-C1-C1-A',
+      input: './input.txt',
+      output: './output.txt'
+    }
+    expect(getArguments(processData)).toEqual(resultObj);
+  });
+
+  test('Should return the config object', () => {
+    let customStdin = 'node my_ciphering_cli -c C1-R1-C0-C0-A-R0-R1-R1-A-C1 -i ./input.txt -o ./output.txt';
+    const processData = customStdin.split(' ');
+    const resultObj = {
+      config: 'C1-R1-C0-C0-A-R0-R1-R1-A-C1',
       input: './input.txt',
       output: './output.txt'
     }
