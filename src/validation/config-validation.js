@@ -1,15 +1,8 @@
 const ConfigError = require('../errors/errors');
 
 function isValidConfig(config) {
-  // if(config === undefined) errorHundler('Config not found');
   if(config === undefined) throw new ConfigError(`Config not found`);
-  
-  let configArr;
-  if (config[config.length - 1] === '-') {
-    const configArr = config.slice(0, -1).split('-');
-    return configArr.every((elem) => isValidElem(elem));
-  }
-  configArr = config.split('-').every((elem) => isValidElem(elem));
+  let configArr = config.split('-').every((elem) => isValidElem(elem));
   if(!configArr) throw new ConfigError(`Config is not valid`);
   return true;
 }
