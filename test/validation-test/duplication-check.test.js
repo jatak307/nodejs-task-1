@@ -15,7 +15,9 @@ describe('Error scenarios: 1 point', () => {
   });
 });
 
-test('should be falsy', () => {
-  const obj = { output: 'input.txt'};
-  expect(isDuplicated(obj, 'input')).toBe(false);
+describe('Success scenarios', () => {
+  test('should be falsy', () => {
+    const obj = { output: 'input.txt'};
+    expect(isDuplicated(obj, 'input')).toBe(false);
+  });
 });

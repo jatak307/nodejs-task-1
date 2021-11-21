@@ -9,8 +9,10 @@ describe('Error scenarios: 3, 4 points', () => {
   });
 });
 
-test('should be truthy', () => {
-  const iKey = 'input';
-  const correctInputName = './input.txt';
-  expect(isValidFileName(iKey, correctInputName)).toBe(true);
+describe('Success scenarios', () => {
+  test('should be truthy', () => {
+    const iKey = 'input';
+    const correctInputName = './input.txt';
+    expect(isValidFileName(iKey, correctInputName)).toBe(true);
+  });
 });

@@ -19,7 +19,7 @@ describe('Error scenarios: 2, 5 points', () => {
   });
 });
 
-describe('Success scenarios', () => {
+describe('Success scenarios: 1,2 points', () => {
   test('should be truthy', () => {
     const config = 'C1-C0-A-R1-R0-A-R0-R0-C1-A';
     expect(isValidConfig(config)).toBe(true);
